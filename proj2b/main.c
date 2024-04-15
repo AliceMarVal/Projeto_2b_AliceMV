@@ -1,8 +1,5 @@
 //Alice Martins Valero
 
-//p1 -> aSb
-//p2 -> c
-
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -56,7 +53,6 @@ int main() {
     printf("\n === === ========== === ===            === === === === === === === === === === ===");
 
 //inicializa a pilha
-//d0
     printf("\n %2d   q0  .%7s   d0  -- ", i, w);
     printf("     s[] : ");
     ++i;
@@ -92,7 +88,6 @@ q1:
         ++cont;
     //d2| p2
     } else if (token == 'c' && stack[top] == 'S') {
-        //printf("\n %2d   q1  .%7s   d2  p2  ", i, w);
         printf("\n %2d   q1  ", i);
         for (k = 0; k<(len-1); k++)   { printf("%c", w[k]); }
         printf(".");
@@ -111,7 +106,6 @@ q1:
         ++cont;
     //d3
     } else if (token == 'a' && stack[top] == 'a') {
-        //printf("\n %2d   q1  .%7s   d4  -  ", i, w);
         printf("\n %2d   q1  ", i);
         for (k = 0; k<(len-1); k++)   { printf("%c", w[k]); }
         printf(".");
@@ -130,7 +124,6 @@ q1:
         w[len] = '\0';
     //d4
     } else if (token == 'b' && stack[top] == 'b') {
-        //printf("\n %2d   q1  .%7s   d5  -  ", i, w);
         printf("\n %2d   q1  ", i);
         for (k = 0; k<(len-1); k++)   { printf("%c", w[k]); }
         printf(".");
@@ -152,7 +145,6 @@ q1:
 
     //d5
     } else if (token == 'c' && stack[top] == 'c') {
-        //printf("\n %2d   q1  .%7s   d6  -  ", i, w);
         printf("\n %2d   q1  ", i);
         for (k = 0; k<(len-1); k++)   { printf("%c", w[k]); }
         printf(".");
@@ -176,13 +168,11 @@ q1:
         printf("     s[] : ");
         for (int h=top; h>=0; h--) { printf("%c   ", stack[h]); }
         ++i;
-        //printf("\nAntes ir para ARV");
         goto ARV;
     }
     goto q1;
 
 ARV:
-    //printf("\nNo inicio de ARV");
     arv[0] = 'S';
 
     for(int j=0; j<cont; j++){
@@ -208,7 +198,7 @@ ARV:
             printf("\n%c  %c  %c", arv[3*j+1], arv[3*j+2], arv[3*j+3]); printf("\n / | \\"); //imprime as demais folhas
         }
     }
-
+    printf("\n\n");
     fclose(fp);
     return 0;
 }
